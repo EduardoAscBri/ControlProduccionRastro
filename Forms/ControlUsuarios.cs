@@ -283,7 +283,7 @@ namespace FYRASA.Forms
             }
             else if(lString.Length >= 15 || lString.Length <= 5)
             {
-                MessageBox.Show("La contraseña no debe ser mayor a 15 caracteres o menor a 5 caracteres, ingrese nuevamente la contraseña");
+                MessageBox.Show("La contraseña debe ser entre 5 y 15 caracteres, ingrese nuevamente la contraseña");
                 this.txtUsuario.Text = "";
                 this.txtUsuario.Focus();
             }

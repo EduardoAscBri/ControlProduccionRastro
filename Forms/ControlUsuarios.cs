@@ -47,6 +47,7 @@ namespace FYRASA.Forms
         {
             InitializeComponent();                  //Inicializa los componentes del form
             this.conexion = conexion;               //Asiga la conexion externa como propiedad del form
+            this.txtGuardar.Enabled = false;
         }
 
         //Evento de carga del form
@@ -66,6 +67,7 @@ namespace FYRASA.Forms
         private void TxtNuevo_Click(object sender, EventArgs e)
         {
             limpiarVista();                         //Metodo que limpia la vista del form (limpia los controles de texto y check)
+            this.txtGuardar.Enabled = true;         //Define el boton de guardar como habilitado
             this.txtUsuario.Focus();                //Envia el foco del formulario hacia el texto del nombre de usuario
         }
 
@@ -236,6 +238,55 @@ namespace FYRASA.Forms
         private void Button2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;               //Define el estado de la ventana como minimizado
+        }
+
+        private void TxtUsuario_KeyUp(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void TxtUsuario_Leave(object sender, EventArgs e)
+        {
+            string lString = this.txtUsuario.Text;
+            if (lString == "")
+            {
+
+                this.txtGuardar.Enabled = false;
+
+                /*this.txtUsuario.Enabled = false;
+                this.txtContraseña.Enabled = false;
+                this.txtNuevo.Enabled = false;
+                this.txtGuardar.Enabled = false;
+                */
+            }
+            else if(lString.Length >= 15 || lString.Length <= 5)
+            {
+                MessageBox.Show("El usuario no debe ser mayor a 15 caracteres, o menor a 5 caracteres, ingrese nuevamente el usuario");
+                this.txtUsuario.Text = "";
+                this.txtUsuario.Focus();
+            }
+        }
+
+        private void TxtContraseña_Leave(object sender, EventArgs e)
+        {
+            string lString = this.txtContraseña.Text;
+            if (lString == "")
+            {
+
+                this.txtGuardar.Enabled = false;
+
+                /*this.txtUsuario.Enabled = false;
+                this.txtContraseña.Enabled = false;
+                this.txtNuevo.Enabled = false;
+                this.txtGuardar.Enabled = false;
+                */
+
+            }
+            else if(lString.Length >= 15 || lString.Length <= 5)
+            {
+                MessageBox.Show("La contraseña no debe ser mayor a 15 caracteres o menor a 5 caracteres, ingrese nuevamente la contraseña");
+                this.txtUsuario.Text = "";
+                this.txtUsuario.Focus();
+            }
         }
     }
 }

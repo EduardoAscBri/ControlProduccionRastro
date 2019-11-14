@@ -137,7 +137,7 @@
             this.txtSerie.Location = new System.Drawing.Point(610, 82);
             this.txtSerie.Name = "txtSerie";
             this.txtSerie.Size = new System.Drawing.Size(64, 25);
-            this.txtSerie.TabIndex = 3;
+            this.txtSerie.TabIndex = 4;
             // 
             // label2
             // 
@@ -165,7 +165,7 @@
             this.txtFolio.Location = new System.Drawing.Point(680, 82);
             this.txtFolio.Name = "txtFolio";
             this.txtFolio.Size = new System.Drawing.Size(64, 25);
-            this.txtFolio.TabIndex = 11;
+            this.txtFolio.TabIndex = 5;
             this.txtFolio.Leave += new System.EventHandler(this.TxtFolio_Leave);
             // 
             // label4
@@ -184,7 +184,7 @@
             this.txtRazonSocial.Location = new System.Drawing.Point(104, 82);
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(405, 25);
-            this.txtRazonSocial.TabIndex = 15;
+            this.txtRazonSocial.TabIndex = 3;
             this.txtRazonSocial.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtRazonSocial_KeyUp);
             // 
             // label5
@@ -203,7 +203,7 @@
             this.txtCodigoCli.Location = new System.Drawing.Point(34, 82);
             this.txtCodigoCli.Name = "txtCodigoCli";
             this.txtCodigoCli.Size = new System.Drawing.Size(64, 25);
-            this.txtCodigoCli.TabIndex = 13;
+            this.txtCodigoCli.TabIndex = 2;
             // 
             // label6
             // 
@@ -241,7 +241,7 @@
             this.txtNombreConductor.Location = new System.Drawing.Point(34, 291);
             this.txtNombreConductor.Name = "txtNombreConductor";
             this.txtNombreConductor.Size = new System.Drawing.Size(405, 25);
-            this.txtNombreConductor.TabIndex = 21;
+            this.txtNombreConductor.TabIndex = 8;
             // 
             // label10
             // 
@@ -259,7 +259,7 @@
             this.txtCantidadCerdos.Location = new System.Drawing.Point(34, 341);
             this.txtCantidadCerdos.Name = "txtCantidadCerdos";
             this.txtCantidadCerdos.Size = new System.Drawing.Size(138, 25);
-            this.txtCantidadCerdos.TabIndex = 25;
+            this.txtCantidadCerdos.TabIndex = 9;
             // 
             // label11
             // 
@@ -277,7 +277,7 @@
             this.txtPesoPromedio.Location = new System.Drawing.Point(216, 341);
             this.txtPesoPromedio.Name = "txtPesoPromedio";
             this.txtPesoPromedio.Size = new System.Drawing.Size(138, 25);
-            this.txtPesoPromedio.TabIndex = 27;
+            this.txtPesoPromedio.TabIndex = 10;
             // 
             // label12
             // 
@@ -299,7 +299,7 @@
             this.cmbCanalizacion.MaxDropDownItems = 5;
             this.cmbCanalizacion.Name = "cmbCanalizacion";
             this.cmbCanalizacion.Size = new System.Drawing.Size(238, 25);
-            this.cmbCanalizacion.TabIndex = 31;
+            this.cmbCanalizacion.TabIndex = 11;
             // 
             // bttSalir
             // 
@@ -309,7 +309,7 @@
             this.bttSalir.Location = new System.Drawing.Point(640, 388);
             this.bttSalir.Name = "bttSalir";
             this.bttSalir.Size = new System.Drawing.Size(120, 32);
-            this.bttSalir.TabIndex = 34;
+            this.bttSalir.TabIndex = 1;
             this.bttSalir.Text = "Salir";
             this.bttSalir.UseVisualStyleBackColor = true;
             this.bttSalir.Click += new System.EventHandler(this.BttSalir_Click);
@@ -322,7 +322,7 @@
             this.txtGuardar.Location = new System.Drawing.Point(497, 388);
             this.txtGuardar.Name = "txtGuardar";
             this.txtGuardar.Size = new System.Drawing.Size(120, 32);
-            this.txtGuardar.TabIndex = 33;
+            this.txtGuardar.TabIndex = 12;
             this.txtGuardar.Text = "Guardar";
             this.txtGuardar.UseVisualStyleBackColor = true;
             this.txtGuardar.Click += new System.EventHandler(this.TxtGuardar_Click);
@@ -335,7 +335,7 @@
             this.txtNuevo.Location = new System.Drawing.Point(346, 388);
             this.txtNuevo.Name = "txtNuevo";
             this.txtNuevo.Size = new System.Drawing.Size(120, 32);
-            this.txtNuevo.TabIndex = 32;
+            this.txtNuevo.TabIndex = 0;
             this.txtNuevo.Text = "Nuevo";
             this.txtNuevo.UseVisualStyleBackColor = true;
             this.txtNuevo.Click += new System.EventHandler(this.TxtNuevo_Click);
@@ -349,7 +349,7 @@
             this.dtpFecha.Location = new System.Drawing.Point(610, 131);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(134, 20);
-            this.dtpFecha.TabIndex = 35;
+            this.dtpFecha.TabIndex = 6;
             // 
             // dgvClientes
             // 
@@ -400,7 +400,7 @@
             this.txtGranja.Location = new System.Drawing.Point(34, 239);
             this.txtGranja.Name = "txtGranja";
             this.txtGranja.Size = new System.Drawing.Size(405, 25);
-            this.txtGranja.TabIndex = 38;
+            this.txtGranja.TabIndex = 7;
             // 
             // Boletas
             // 

@@ -131,7 +131,7 @@
             this.dgvOrdenesProduccion.Name = "dgvOrdenesProduccion";
             this.dgvOrdenesProduccion.ReadOnly = true;
             this.dgvOrdenesProduccion.Size = new System.Drawing.Size(776, 276);
-            this.dgvOrdenesProduccion.TabIndex = 2;
+            this.dgvOrdenesProduccion.TabIndex = 0;
             this.dgvOrdenesProduccion.DoubleClick += new System.EventHandler(this.DgvOrdenesProduccion_DoubleClick);
             // 
             // Serie
@@ -190,7 +190,7 @@
             this.bttSalir.Location = new System.Drawing.Point(668, 394);
             this.bttSalir.Name = "bttSalir";
             this.bttSalir.Size = new System.Drawing.Size(120, 32);
-            this.bttSalir.TabIndex = 15;
+            this.bttSalir.TabIndex = 3;
             this.bttSalir.Text = "Salir";
             this.bttSalir.UseVisualStyleBackColor = true;
             this.bttSalir.Click += new System.EventHandler(this.BttSalir_Click);
@@ -203,7 +203,7 @@
             this.txtNuevo.Location = new System.Drawing.Point(513, 394);
             this.txtNuevo.Name = "txtNuevo";
             this.txtNuevo.Size = new System.Drawing.Size(120, 32);
-            this.txtNuevo.TabIndex = 13;
+            this.txtNuevo.TabIndex = 1;
             this.txtNuevo.Text = "Nuevo";
             this.txtNuevo.UseVisualStyleBackColor = true;
             this.txtNuevo.Click += new System.EventHandler(this.TxtNuevo_Click);
@@ -216,7 +216,7 @@
             this.button3.Location = new System.Drawing.Point(359, 394);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 32);
-            this.button3.TabIndex = 16;
+            this.button3.TabIndex = 2;
             this.button3.Text = "Actualizar";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);

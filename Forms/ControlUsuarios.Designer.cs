@@ -59,7 +59,7 @@
             this.panelWindows.Location = new System.Drawing.Point(0, 0);
             this.panelWindows.Name = "panelWindows";
             this.panelWindows.Size = new System.Drawing.Size(738, 32);
-            this.panelWindows.TabIndex = 0;
+            this.panelWindows.TabIndex = 99;
             // 
             // label1
             // 
@@ -68,7 +68,7 @@
             this.label1.Location = new System.Drawing.Point(12, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(234, 25);
-            this.label1.TabIndex = 3;
+            this.label1.TabIndex = 11;
             this.label1.Text = "Configuracion de usuarios";
             // 
             // button2
@@ -82,7 +82,7 @@
             this.button2.Location = new System.Drawing.Point(618, 0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(40, 32);
-            this.button2.TabIndex = 2;
+            this.button2.TabIndex = 12;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
@@ -97,7 +97,7 @@
             this.button1.Location = new System.Drawing.Point(658, 0);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(40, 32);
-            this.button1.TabIndex = 1;
+            this.button1.TabIndex = 13;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
@@ -112,7 +112,7 @@
             this.bttCerrar.Location = new System.Drawing.Point(698, 0);
             this.bttCerrar.Name = "bttCerrar";
             this.bttCerrar.Size = new System.Drawing.Size(40, 32);
-            this.bttCerrar.TabIndex = 0;
+            this.bttCerrar.TabIndex = 14;
             this.bttCerrar.UseVisualStyleBackColor = true;
             this.bttCerrar.Click += new System.EventHandler(this.BttCerrar_Click);
             // 
@@ -126,7 +126,7 @@
             this.cmbUsuarios.MaxDropDownItems = 5;
             this.cmbUsuarios.Name = "cmbUsuarios";
             this.cmbUsuarios.Size = new System.Drawing.Size(238, 33);
-            this.cmbUsuarios.TabIndex = 1;
+            this.cmbUsuarios.TabIndex = 0;
             this.cmbUsuarios.SelectionChangeCommitted += new System.EventHandler(this.CmbUsuarios_SelectionChangeCommitted);
             // 
             // txtUsuario
@@ -135,7 +135,9 @@
             this.txtUsuario.Location = new System.Drawing.Point(52, 181);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(238, 33);
-            this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.TabIndex = 1;
+            this.txtUsuario.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtUsuario_KeyUp);
+            this.txtUsuario.Leave += new System.EventHandler(this.TxtUsuario_Leave);
             // 
             // txtContraseña
             // 
@@ -144,7 +146,8 @@
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(238, 33);
-            this.txtContraseña.TabIndex = 3;
+            this.txtContraseña.TabIndex = 2;
+            this.txtContraseña.Leave += new System.EventHandler(this.TxtContraseña_Leave);
             // 
             // label2
             // 
@@ -173,7 +176,7 @@
             this.chkArchivo.Location = new System.Drawing.Point(495, 147);
             this.chkArchivo.Name = "chkArchivo";
             this.chkArchivo.Size = new System.Drawing.Size(97, 29);
-            this.chkArchivo.TabIndex = 6;
+            this.chkArchivo.TabIndex = 3;
             this.chkArchivo.Text = "Archivo";
             this.chkArchivo.UseVisualStyleBackColor = true;
             // 
@@ -184,7 +187,7 @@
             this.chkBoletas.Location = new System.Drawing.Point(495, 183);
             this.chkBoletas.Name = "chkBoletas";
             this.chkBoletas.Size = new System.Drawing.Size(93, 29);
-            this.chkBoletas.TabIndex = 7;
+            this.chkBoletas.TabIndex = 4;
             this.chkBoletas.Text = "Boletas";
             this.chkBoletas.UseVisualStyleBackColor = true;
             // 
@@ -195,7 +198,7 @@
             this.chkPesos.Location = new System.Drawing.Point(495, 217);
             this.chkPesos.Name = "chkPesos";
             this.chkPesos.Size = new System.Drawing.Size(78, 29);
-            this.chkPesos.TabIndex = 8;
+            this.chkPesos.TabIndex = 5;
             this.chkPesos.Text = "Pesos";
             this.chkPesos.UseVisualStyleBackColor = true;
             // 
@@ -206,7 +209,7 @@
             this.chkReportes.Location = new System.Drawing.Point(495, 250);
             this.chkReportes.Name = "chkReportes";
             this.chkReportes.Size = new System.Drawing.Size(107, 29);
-            this.chkReportes.TabIndex = 9;
+            this.chkReportes.TabIndex = 6;
             this.chkReportes.Text = "Reportes";
             this.chkReportes.UseVisualStyleBackColor = true;
             // 
@@ -231,7 +234,7 @@
             this.txtGuardar.Location = new System.Drawing.Point(463, 384);
             this.txtGuardar.Name = "txtGuardar";
             this.txtGuardar.Size = new System.Drawing.Size(120, 32);
-            this.txtGuardar.TabIndex = 11;
+            this.txtGuardar.TabIndex = 8;
             this.txtGuardar.Text = "Guardar";
             this.txtGuardar.UseVisualStyleBackColor = true;
             this.txtGuardar.Click += new System.EventHandler(this.TxtGuardar_Click);
@@ -244,7 +247,7 @@
             this.bttSalir.Location = new System.Drawing.Point(606, 384);
             this.bttSalir.Name = "bttSalir";
             this.bttSalir.Size = new System.Drawing.Size(120, 32);
-            this.bttSalir.TabIndex = 12;
+            this.bttSalir.TabIndex = 9;
             this.bttSalir.Text = "Salir";
             this.bttSalir.UseVisualStyleBackColor = true;
             this.bttSalir.Click += new System.EventHandler(this.BttSalir_Click);
@@ -256,7 +259,7 @@
             this.chkOrdenesProduccion.Location = new System.Drawing.Point(495, 285);
             this.chkOrdenesProduccion.Name = "chkOrdenesProduccion";
             this.chkOrdenesProduccion.Size = new System.Drawing.Size(229, 29);
-            this.chkOrdenesProduccion.TabIndex = 13;
+            this.chkOrdenesProduccion.TabIndex = 7;
             this.chkOrdenesProduccion.Text = "Ordenes de produccion";
             this.chkOrdenesProduccion.UseVisualStyleBackColor = true;
             // 

@@ -135,8 +135,8 @@
             this.mnMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnArchivo,
-            this.mnProduccion,
             this.mnBoletas,
+            this.mnProduccion,
             this.mnPesos,
             this.mnReportes});
             this.mnMenu.Location = new System.Drawing.Point(0, 0);

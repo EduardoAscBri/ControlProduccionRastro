@@ -98,6 +98,7 @@ namespace FYRASA.Forms
 
             this.txtCodigoCli.Text = codigo;
             this.txtRazonSocial.Text = razonSocial;
+            this.txtGranja.Focus();
         }
 
         private void TxtRazonSocial_KeyUp(object sender, KeyEventArgs e)
@@ -125,25 +126,7 @@ namespace FYRASA.Forms
 
         private void TxtFolio_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                SqlCommand validaFolio = new SqlCommand("SELECT * FROM Boletas " +
-                    "WHERE Serie = '" + this.txtSerie.Text + "' " +
-                    "AND Folio = " + this.txtFolio.Text, this.conexion);
-
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(validaFolio);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-
-                if(dataTable.Rows.Count == 1)
-                {
-                    recargarBoleta(dataTable);
-                }
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            validaFolio();
         }
 
         private void recargarBoleta(DataTable dataTable)
@@ -201,6 +184,7 @@ namespace FYRASA.Forms
             ultimaBoleta = ultimaBoleta + 1;
 
             this.txtFolio.Text = ultimaBoleta.ToString();
+            this.txtRazonSocial.Focus();
         }
 
         private void guardarBoleta()
@@ -227,6 +211,29 @@ namespace FYRASA.Forms
 
             limpiar();
             MessageBox.Show("Boleta guardada");
+        }
+
+        public void validaFolio()
+        {
+            try
+            {
+                SqlCommand validaFolio = new SqlCommand("SELECT * FROM Boletas " +
+                    "WHERE Serie = '" + this.txtSerie.Text + "' " +
+                    "AND Folio = " + this.txtFolio.Text, this.conexion);
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(validaFolio);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                if (dataTable.Rows.Count == 1)
+                {
+                    recargarBoleta(dataTable);
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

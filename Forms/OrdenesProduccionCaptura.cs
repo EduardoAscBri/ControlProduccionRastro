@@ -34,6 +34,7 @@ namespace FYRASA.Forms
             this.conexion = conexion;
             this.usuarioActivo = usuarioActivo;
             this.bttGuardar.Enabled = false;
+            this.txtSerieOrden.Focus();
         }
 
         public OrdenesProduccionCaptura(SqlConnection conexion, Usuario usuarioActivo, int idOrdenProduccion)
@@ -45,6 +46,7 @@ namespace FYRASA.Forms
             this.idOrdenProduccion = idOrdenProduccion;
             this.bttGuardar.Enabled = false;
             cargarOrdenProduccion(this.idOrdenProduccion);
+            this.bttSalir.Focus();
 
         }
 

@@ -46,6 +46,8 @@
             this.txtGuardar = new System.Windows.Forms.Button();
             this.bttSalir = new System.Windows.Forms.Button();
             this.chkOrdenesProduccion = new System.Windows.Forms.CheckBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panelWindows.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +124,7 @@
             this.cmbUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cmbUsuarios.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbUsuarios.FormattingEnabled = true;
-            this.cmbUsuarios.Location = new System.Drawing.Point(52, 78);
+            this.cmbUsuarios.Location = new System.Drawing.Point(52, 94);
             this.cmbUsuarios.MaxDropDownItems = 5;
             this.cmbUsuarios.Name = "cmbUsuarios";
             this.cmbUsuarios.Size = new System.Drawing.Size(238, 33);
@@ -263,12 +265,34 @@
             this.chkOrdenesProduccion.Text = "Ordenes de produccion";
             this.chkOrdenesProduccion.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(458, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(175, 25);
+            this.label4.TabIndex = 100;
+            this.label4.Text = "Permisos de acceso";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(49, 56);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(85, 25);
+            this.label5.TabIndex = 101;
+            this.label5.Text = "Usuarios";
+            // 
             // ControlUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(738, 428);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.chkOrdenesProduccion);
             this.Controls.Add(this.bttSalir);
             this.Controls.Add(this.txtGuardar);
@@ -315,5 +339,7 @@
         private System.Windows.Forms.Button txtGuardar;
         private System.Windows.Forms.Button bttSalir;
         private System.Windows.Forms.CheckBox chkOrdenesProduccion;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -69,38 +69,6 @@ namespace FYRASA.Forms
             this.WindowState = FormWindowState.Minimized;
         }
 
-        public void actualizarDataGridView()
-        {
-            try
-            {
-                this.command = new SqlCommand("SELECT OrdenesProduccion.idOrdenProduccion, " +
-                    "OrdenesProduccion.idBoleta, " +
-                    "OrdenesProduccion.Serie, " +
-                    "OrdenesProduccion.Folio, " +
-                    "OrdenesProduccion.idUsuario, " +
-                    "OrdenesProduccion.Usuario, " +
-                    "OrdenesProduccion.Fecha, " +
-                    "IIF(OrdenesProduccion.Status = 0, 'Autorizada', 'Concluida') AS Status, " +
-                    "Boletas.Granja, " +
-                    "Boletas.CantidadCerdos " +
-                    "FROM OrdenesProduccion LEFT JOIN " +
-                    "Boletas ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
-                    "ORDER BY Fecha DESC", this.conexion);
-
-                    this.dataAdapter = new SqlDataAdapter(this.command);
-                    this.dataAdapter.Fill(this.dataTable);
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
-            dgvOrdenesProduccion.AutoGenerateColumns = false;
-            dgvOrdenesProduccion.DataSource = this.dataTable;
-
-        }
-
         private void BttSalir_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -120,6 +88,38 @@ namespace FYRASA.Forms
 
             OrdenesProduccionCaptura captura = new OrdenesProduccionCaptura(this.conexion, this.usuarioActivo, idOrdenProduccion);
             captura.Show();
+
+        }
+
+        public void actualizarDataGridView()
+        {
+            try
+            {
+                this.command = new SqlCommand("SELECT OrdenesProduccion.idOrdenProduccion, " +
+                    "OrdenesProduccion.idBoleta, " +
+                    "OrdenesProduccion.Serie, " +
+                    "OrdenesProduccion.Folio, " +
+                    "OrdenesProduccion.idUsuario, " +
+                    "OrdenesProduccion.Usuario, " +
+                    "OrdenesProduccion.Fecha, " +
+                    "IIF(OrdenesProduccion.Status = 0, 'Autorizada', 'Concluida') AS Status, " +
+                    "Boletas.Granja, " +
+                    "Boletas.CantidadCerdos " +
+                    "FROM OrdenesProduccion LEFT JOIN " +
+                    "Boletas ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
+                    "ORDER BY Fecha DESC", this.conexion);
+
+                this.dataAdapter = new SqlDataAdapter(this.command);
+                this.dataAdapter.Fill(this.dataTable);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            dgvOrdenesProduccion.AutoGenerateColumns = false;
+            dgvOrdenesProduccion.DataSource = this.dataTable;
 
         }
     }

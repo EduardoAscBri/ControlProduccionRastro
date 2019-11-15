@@ -65,42 +65,16 @@ namespace FYRASA.Forms
             this.Dispose();
         }
 
-        private void cargarBoletas()
-        {
-            this.dataTable.Clear();
-            try
-            {
-                this.command = new SqlCommand("SELECT * FROM Boletas WHERE Status = 0 ORDER BY Fecha DESC", this.conexion);
-                this.dataAdapter = new SqlDataAdapter(this.command);
-                this.dataAdapter.Fill(this.dataTable);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            int lPendientes = this.dataTable.Rows.Count;
-            this.txtBoletasPendientes.Text = lPendientes.ToString();
-
-            this.dgvBoletas.AutoGenerateColumns = false;
-            this.dgvBoletas.DataSource = this.dataTable;
-        }
-
-        private void limpiar()
-        {
-            this.txtSerie.Text = "";
-            this.txtFolio.Text = "";
-            this.txtNombreCli.Text = "";
-            this.txtSerieOrden.Text = "";
-            this.txtFolioOrden.Text = "";
-            this.dtpFecha.Value = DateTime.Now;
-        }
-
         private void TxtNuevo_Click(object sender, EventArgs e)
         {
             limpiar();
             cargarBoletas();
             nuevaOrdenProduccion();
+        }
+
+        private void BttBorrar_Click(object sender, EventArgs e)
+        {
+            borrarOrdenProduccion();
         }
 
         private void ChkAutorizar_CheckedChanged(object sender, EventArgs e)
@@ -148,6 +122,38 @@ namespace FYRASA.Forms
             }
         }
 
+        private void cargarBoletas()
+        {
+            this.dataTable.Clear();
+            try
+            {
+                this.command = new SqlCommand("SELECT * FROM Boletas WHERE Status = 0 ORDER BY Fecha DESC", this.conexion);
+                this.dataAdapter = new SqlDataAdapter(this.command);
+                this.dataAdapter.Fill(this.dataTable);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            int lPendientes = this.dataTable.Rows.Count;
+            this.txtBoletasPendientes.Text = lPendientes.ToString();
+
+            this.dgvBoletas.AutoGenerateColumns = false;
+            this.dgvBoletas.DataSource = this.dataTable;
+        }
+
+        private void limpiar()
+        {
+            this.txtSerie.Text = "";
+            this.txtFolio.Text = "";
+            this.txtNombreCli.Text = "";
+            this.txtSerieOrden.Text = "";
+            this.txtFolioOrden.Text = "";
+            this.dtpFecha.Value = DateTime.Now;
+        }
+
+        //REVISAR METODOS, IMPLEMENTAR SOBRECARGA
         private void recargarOrdenProduccion(DataTable dataTable)
         {
             PopUpForm popUp = new PopUpForm("Recargar orden de producción", "¿Quieres cargar la orden de producción " + this.txtSerie.Text + " " + this.txtFolio.Text + "?", 1);
@@ -195,6 +201,52 @@ namespace FYRASA.Forms
             }
         }
 
+        public void cargarOrdenProduccion(int idOrdenProduccion)
+        {
+            try
+            {
+                this.command = new SqlCommand("SELECT OrdenesProduccion.idOrdenProduccion, " +
+                    "OrdenesProduccion.idBoleta, " +
+                    "OrdenesProduccion.Serie, " +
+                    "OrdenesProduccion.Folio, " +
+                    "OrdenesProduccion.idUsuario, " +
+                    "OrdenesProduccion.Usuario, " +
+                    "OrdenesProduccion.Fecha, " +
+                    "OrdenesProduccion.Status, " +
+                    "Boletas.codigoCli, " +
+                    "Boletas.nombreCli, " +
+                    "Boletas.Serie AS SerieBoleta, " +
+                    "Boletas.Folio AS FolioBoleta, " +
+                    "Boletas.Status AS StatusBoleta " +
+                    "FROM OrdenesProduccion " +
+                    "LEFT JOIN Boletas " +
+                    "ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
+                    "WHERE OrdenesProduccion.idOrdenProduccion = " + idOrdenProduccion, this.conexion);
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(this.command);
+                da.Fill(dt);
+                DataRow dr = dt.Rows[0];
+
+                this.txtSerieOrden.Text = dr["Serie"].ToString();
+                this.txtFolioOrden.Text = dr["Folio"].ToString();
+                this.dtpFecha.Value = Convert.ToDateTime(dr["Fecha"]);
+                this.txtSerie.Text = dr["SerieBoleta"].ToString();
+                this.txtFolio.Text = dr["FolioBoleta"].ToString();
+                this.txtNombreCli.Text = dr["nombreCli"].ToString();
+                this.chkAutorizar.Checked = Convert.ToInt32(dr["Status"]) == 0 ? true : false;
+                this.idBoleta = Convert.ToInt32(dr["idBoleta"]);
+
+
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //REVISAR METODOS
+
         private void nuevaOrdenProduccion()
         {
             limpiar();
@@ -240,55 +292,6 @@ namespace FYRASA.Forms
                 MessageBox.Show(ex.Message);
             }
             MessageBox.Show("Se ha creado la orden de produccion");
-        }
-
-        public void cargarOrdenProduccion(int idOrdenProduccion)
-        {
-            try
-            {
-                this.command = new SqlCommand("SELECT OrdenesProduccion.idOrdenProduccion, " +
-                    "OrdenesProduccion.idBoleta, " +
-                    "OrdenesProduccion.Serie, " +
-                    "OrdenesProduccion.Folio, " +
-                    "OrdenesProduccion.idUsuario, " +
-                    "OrdenesProduccion.Usuario, " +
-                    "OrdenesProduccion.Fecha, " +
-                    "OrdenesProduccion.Status, " +
-                    "Boletas.codigoCli, " +
-                    "Boletas.nombreCli, "+
-                    "Boletas.Serie AS SerieBoleta, " +
-                    "Boletas.Folio AS FolioBoleta, " +
-                    "Boletas.Status AS StatusBoleta " +
-                    "FROM OrdenesProduccion " +
-                    "LEFT JOIN Boletas " +
-                    "ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
-                    "WHERE OrdenesProduccion.idOrdenProduccion = " + idOrdenProduccion, this.conexion);
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(this.command);
-                da.Fill(dt);
-                DataRow dr = dt.Rows[0];
-
-                this.txtSerieOrden.Text = dr["Serie"].ToString();
-                this.txtFolioOrden.Text = dr["Folio"].ToString();
-                this.dtpFecha.Value = Convert.ToDateTime(dr["Fecha"]);
-                this.txtSerie.Text = dr["SerieBoleta"].ToString();
-                this.txtFolio.Text = dr["FolioBoleta"].ToString();
-                this.txtNombreCli.Text = dr["nombreCli"].ToString();
-                this.chkAutorizar.Checked = Convert.ToInt32(dr["Status"]) == 0 ? true : false;
-                this.idBoleta = Convert.ToInt32(dr["idBoleta"]);
-
-
-            }
-            catch(SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void BttBorrar_Click(object sender, EventArgs e)
-        {
-            borrarOrdenProduccion();
         }
 
         private void borrarOrdenProduccion()

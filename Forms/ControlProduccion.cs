@@ -61,6 +61,23 @@ namespace FYRASA.Forms
             actualizarDataGridView();
         }
 
+        private void DgvOrdenesProduccion_DoubleClick(object sender, EventArgs e)
+        {
+            int currentRow = this.dgvOrdenesProduccion.CurrentRow.Index;
+            this.dataRow = this.dataTable.Rows[currentRow];
+
+            this.txtSerieOrden.Text = this.dataRow["Serie"].ToString();
+            this.txtFolioOrden.Text = this.dataRow["Folio"].ToString();
+            this.txtGranjaOrden.Text = this.dataRow["Granja"].ToString();
+            this.txtCerdosOrden.Text = this.dataRow["CantidadCerdos"].ToString();
+            this.dtpFecha.Value = Convert.ToDateTime(this.dataRow["Fecha"]);
+        }
+
+        public void cargarOrdenActual()
+        {
+
+        }
+
         public void actualizarDataGridView()
         {
             try
@@ -90,27 +107,6 @@ namespace FYRASA.Forms
 
             dgvOrdenesProduccion.AutoGenerateColumns = false;
             dgvOrdenesProduccion.DataSource = this.dataTable;
-
-        }
-
-        private void DgvOrdenesProduccion_DoubleClick(object sender, EventArgs e)
-        {
-
-
-            int currentRow = this.dgvOrdenesProduccion.CurrentRow.Index;
-            this.dataRow = this.dataTable.Rows[currentRow];
-
-            this.txtSerieOrden.Text = this.dataRow["Serie"].ToString();
-            this.txtFolioOrden.Text = this.dataRow["Folio"].ToString();
-            this.txtGranjaOrden.Text = this.dataRow["Granja"].ToString();
-            this.txtCerdosOrden.Text = this.dataRow["CantidadCerdos"].ToString();
-            this.dtpFecha.Value = Convert.ToDateTime(this.dataRow["Fecha"]);
-
-
-        }
-
-        public void cargarOrdenActual()
-        {
 
         }
 

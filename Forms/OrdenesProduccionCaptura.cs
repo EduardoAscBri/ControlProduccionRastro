@@ -47,7 +47,6 @@ namespace FYRASA.Forms
             this.bttGuardar.Enabled = false;
             cargarOrdenProduccion(this.idOrdenProduccion);
             this.bttSalir.Focus();
-
         }
 
         private void BttCerrar_Click(object sender, EventArgs e)
@@ -104,22 +103,19 @@ namespace FYRASA.Forms
 
         private void TxtFolioOrden_Leave(object sender, EventArgs e)
         {
-            try
+            int idOrden = 0;
+            this.command = new SqlCommand("SELECT idOrdenProduccion FROM OrdenesProduccion WHERE Serie = '" + this.txtSerieOrden.Text + "' AND Folio = " + this.txtFolioOrden.Text, this.conexion);
+            idOrden = Convert.ToInt32(this.command.ExecuteScalar());
+            if(idOrden != 0)
             {
-                SqlCommand validaFolio = new SqlCommand("SELECT * FROM OrdenesProduccion WHERE Serie = '" + this.txtSerieOrden.Text + "' AND Folio = " + this.txtFolioOrden.Text, this.conexion);
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(validaFolio);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
+                MessageBox.Show("Ya existe una orden de produccion con ese numero");
+                cargarOrdenProduccion(idOrden);
+            }
+            else
+            {
+                MessageBox.Show("No existe la orden de producción");
+            }
 
-                if (dataTable.Rows.Count == 1)
-                {
-                    recargarOrdenProduccion(dataTable);
-                }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void cargarBoletas()
@@ -151,101 +147,60 @@ namespace FYRASA.Forms
             this.txtSerieOrden.Text = "";
             this.txtFolioOrden.Text = "";
             this.dtpFecha.Value = DateTime.Now;
+            this.chkAutorizar.Checked = false;
         }
 
-        //REVISAR METODOS, IMPLEMENTAR SOBRECARGA
-        private void recargarOrdenProduccion(DataTable dataTable)
+        public void cargarOrdenProduccion(int idOrdenProduccion)
         {
             PopUpForm popUp = new PopUpForm("Recargar orden de producción", "¿Quieres cargar la orden de producción " + this.txtSerie.Text + " " + this.txtFolio.Text + "?", 1);
             popUp.ShowDialog();
 
             if (popUp.DialogResult == DialogResult.OK)
             {
-                this.command = new SqlCommand("SELECT OrdenesProduccion.idOrdenProduccion, " +
-                    "OrdenesProduccion.idBoleta, " +
-                    "OrdenesProduccion.Serie, " +
-                    "OrdenesProduccion.Folio, " +
-                    "OrdenesProduccion.idUsuario, " +
-                    "OrdenesProduccion.Usuario, " +
-                    "OrdenesProduccion.Fecha, " +
-                    "OrdenesProduccion.Status, " +
-                    "Boletas.codigoCli, " +
-                    "Boletas.nombreCli, " +
-                    "Boletas.Serie AS SerieBoleta, " +
-                    "Boletas.Folio AS FolioBoleta, " +
-                    "Boletas.Status AS StatisBoleta " +
-                    "FROM OrdenesProduccion " +
-                    "LEFT JOIN Boletas " +
-                    "ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
-                    "WHERE (OrdenesProduccion.Serie = '" + this.txtSerieOrden.Text + "') AND (OrdenesProduccion.Folio = " + this.txtFolioOrden.Text + ")" , this.conexion);
+                try
+                {
+                    this.command = new SqlCommand("SELECT OrdenesProduccion.idOrdenProduccion, " +
+                        "OrdenesProduccion.idBoleta, " +
+                        "OrdenesProduccion.Serie, " +
+                        "OrdenesProduccion.Folio, " +
+                        "OrdenesProduccion.idUsuario, " +
+                        "OrdenesProduccion.Usuario, " +
+                        "OrdenesProduccion.Fecha, " +
+                        "OrdenesProduccion.Status, " +
+                        "Boletas.codigoCli, " +
+                        "Boletas.nombreCli, " +
+                        "Boletas.Serie AS SerieBoleta, " +
+                        "Boletas.Folio AS FolioBoleta, " +
+                        "Boletas.Status AS StatusBoleta " +
+                        "FROM OrdenesProduccion " +
+                        "LEFT JOIN Boletas " +
+                        "ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
+                        "WHERE OrdenesProduccion.idOrdenProduccion = " + idOrdenProduccion, this.conexion);
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(this.command);
-                da.Fill(dt);
-                DataRow dr = dt.Rows[0];
+                    DataTable dt = new DataTable();
+                    SqlDataAdapter da = new SqlDataAdapter(this.command);
+                    da.Fill(dt);
+                    DataRow dr = dt.Rows[0];
 
-
-                this.txtSerieOrden.Text = dr["Serie"].ToString();
-                this.txtFolioOrden.Text = dr["Folio"].ToString();
-                this.dtpFecha.Value = Convert.ToDateTime(dr["Fecha"]);
-                this.txtSerie.Text = dr["SerieBoleta"].ToString();
-                this.txtFolio.Text = dr["FolioBoleta"].ToString();
-                this.txtNombreCli.Text = dr["nombreCli"].ToString();
-                this.chkAutorizar.Checked = Convert.ToInt32(dr["Status"]) == 0 ? true : false;
-                this.idBoleta = Convert.ToInt32(dr["idBoleta"]);
-
+                    this.txtSerieOrden.Text = dr["Serie"].ToString();
+                    this.txtFolioOrden.Text = dr["Folio"].ToString();
+                    this.dtpFecha.Value = Convert.ToDateTime(dr["Fecha"]);
+                    this.txtSerie.Text = dr["SerieBoleta"].ToString();
+                    this.txtFolio.Text = dr["FolioBoleta"].ToString();
+                    this.txtNombreCli.Text = dr["nombreCli"].ToString();
+                    this.chkAutorizar.Checked = Convert.ToInt32(dr["Status"]) == 0 ? true : false;
+                    this.idBoleta = Convert.ToInt32(dr["idBoleta"]);
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
                 nuevaOrdenProduccion();
             }
         }
-
-        public void cargarOrdenProduccion(int idOrdenProduccion)
-        {
-            try
-            {
-                this.command = new SqlCommand("SELECT OrdenesProduccion.idOrdenProduccion, " +
-                    "OrdenesProduccion.idBoleta, " +
-                    "OrdenesProduccion.Serie, " +
-                    "OrdenesProduccion.Folio, " +
-                    "OrdenesProduccion.idUsuario, " +
-                    "OrdenesProduccion.Usuario, " +
-                    "OrdenesProduccion.Fecha, " +
-                    "OrdenesProduccion.Status, " +
-                    "Boletas.codigoCli, " +
-                    "Boletas.nombreCli, " +
-                    "Boletas.Serie AS SerieBoleta, " +
-                    "Boletas.Folio AS FolioBoleta, " +
-                    "Boletas.Status AS StatusBoleta " +
-                    "FROM OrdenesProduccion " +
-                    "LEFT JOIN Boletas " +
-                    "ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
-                    "WHERE OrdenesProduccion.idOrdenProduccion = " + idOrdenProduccion, this.conexion);
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(this.command);
-                da.Fill(dt);
-                DataRow dr = dt.Rows[0];
-
-                this.txtSerieOrden.Text = dr["Serie"].ToString();
-                this.txtFolioOrden.Text = dr["Folio"].ToString();
-                this.dtpFecha.Value = Convert.ToDateTime(dr["Fecha"]);
-                this.txtSerie.Text = dr["SerieBoleta"].ToString();
-                this.txtFolio.Text = dr["FolioBoleta"].ToString();
-                this.txtNombreCli.Text = dr["nombreCli"].ToString();
-                this.chkAutorizar.Checked = Convert.ToInt32(dr["Status"]) == 0 ? true : false;
-                this.idBoleta = Convert.ToInt32(dr["idBoleta"]);
-
-
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        //REVISAR METODOS
 
         private void nuevaOrdenProduccion()
         {

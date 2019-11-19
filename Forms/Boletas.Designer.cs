@@ -60,6 +60,7 @@
             this.CRAZONSOCIAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.txtGranja = new System.Windows.Forms.TextBox();
+            this.bttImprimir = new System.Windows.Forms.Button();
             this.panelWindows.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
@@ -402,12 +403,26 @@
             this.txtGranja.Size = new System.Drawing.Size(405, 25);
             this.txtGranja.TabIndex = 7;
             // 
+            // bttImprimir
+            // 
+            this.bttImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.bttImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttImprimir.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttImprimir.Location = new System.Drawing.Point(190, 388);
+            this.bttImprimir.Name = "bttImprimir";
+            this.bttImprimir.Size = new System.Drawing.Size(120, 32);
+            this.bttImprimir.TabIndex = 40;
+            this.bttImprimir.Text = "Imprimir";
+            this.bttImprimir.UseVisualStyleBackColor = true;
+            this.bttImprimir.Click += new System.EventHandler(this.bttImprimir_Click);
+            // 
             // Boletas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bttImprimir);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtGranja);
             this.Controls.Add(this.dgvClientes);
@@ -480,5 +495,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CRAZONSOCIAL;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtGranja;
+        private System.Windows.Forms.Button bttImprimir;
     }
 }

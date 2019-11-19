@@ -235,5 +235,11 @@ namespace FYRASA.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void bttImprimir_Click(object sender, EventArgs e)
+        {
+            VisorReportes visor = new VisorReportes();
+            visor.Show();
+        }
     }
 }

@@ -20,6 +20,7 @@ namespace FYRASA.Forms
         private SqlCommand command;
         private DataTable dataTable = new DataTable();
         private string rutaLocal;
+        private int idBoleta;
         public Boletas()
         {
             InitializeComponent();
@@ -238,8 +239,7 @@ namespace FYRASA.Forms
 
         private void bttImprimir_Click(object sender, EventArgs e)
         {
-            VisorReportes visor = new VisorReportes();
-            visor.Show();
+
         }
     }
 }

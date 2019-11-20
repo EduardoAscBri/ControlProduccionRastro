@@ -74,7 +74,8 @@ C:\Users\Eduardo\source\repos\FYRASA\FYRASA\bin\Debug\pt\Microsoft.ReportViewer.
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
-C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\FYRASA.Forms.VisorReportes.resources
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\RdlCompile.cache
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\RdlCompile.compiled
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\FYRASA.csproj.CopyComplete
+C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\FYRASA.Forms.Reportes.resources
+C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\FYRASA.Forms.VisorDeReportes.resources

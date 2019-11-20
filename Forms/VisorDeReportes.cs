@@ -21,9 +21,6 @@ namespace FYRASA.Forms
         DataTable dataTable = new DataTable();
         ReportDataSource reportDataSource;
 
-
-
-
         public VisorDeReportes()
         {
             InitializeComponent();
@@ -41,6 +38,7 @@ namespace FYRASA.Forms
             
         }
 
+        //Metodos por reporte
         public void BoletasHistorico()
         {
             this.rvVisorReportes.LocalReport.DataSources.Clear();

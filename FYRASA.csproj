@@ -177,6 +177,7 @@
     <EmbeddedResource Include="Forms\VisorDeReportes.resx">
       <DependentUpon>VisorDeReportes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Informes\Boleta.rdlc" />
     <EmbeddedResource Include="Informes\BoletasHistorico.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

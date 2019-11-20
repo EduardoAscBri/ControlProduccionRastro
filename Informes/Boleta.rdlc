@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <Body>
+    <ReportItems>
+      <Image Name="Logo">
+        <Source>Embedded</Source>
+        <Value>InovasisV2</Value>
+        <Sizing>FitProportional</Sizing>
+        <Top>1.13426cm</Top>
+        <Left>2.06058cm</Left>
+        <Height>3.53729cm</Height>
+        <Width>3.80187cm</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
+      <Textbox Name="Textbox1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Frigorifico y rastro de Santa Ana S.A. de C.V.</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>18pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox1</rd:DefaultName>
+        <Top>1.21405cm</Top>
+        <Left>8.48995cm</Left>
+        <Height>3.4575cm</Height>
+        <Width>10.01417cm</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <VerticalAlign>Middle</VerticalAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>RFC: XAXX010101000</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>5.20884cm</Top>
+        <Left>8.48995cm</Left>
+        <Height>0.81167cm</Height>
+        <Width>10.01417cm</Width>
+        <ZIndex>2</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Cel. 352-111-31-52</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>5.20884cm</Top>
+        <Left>2.06058cm</Left>
+        <Height>0.81167cm</Height>
+        <Width>5.70146cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox6">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>BOLETA DE ENTRADA</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>14pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>6.64768cm</Top>
+        <Left>2.06058cm</Left>
+        <Height>0.81167cm</Height>
+        <Width>16.44354cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox11">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>SERIE</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox11</rd:DefaultName>
+        <Top>7.7753cm</Top>
+        <Left>12.82912cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>5</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox12">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>FOLIO</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox12</rd:DefaultName>
+        <Top>7.7753cm</Top>
+        <Left>16.00412cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>6</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox13">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>FECHA</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>9.62738cm</Top>
+        <Left>14.39016cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>7</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox14">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CODIGO DEL CLIENTE:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!codigoCli.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox14</rd:DefaultName>
+        <Top>7.7753cm</Top>
+        <Left>2.06058cm</Left>
+        <Height>0.6cm</Height>
+        <Width>10.22584cm</Width>
+        <ZIndex>8</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox15">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>RAZON SOCIAL:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!nombreCli.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox15</rd:DefaultName>
+        <Top>8.70134cm</Top>
+        <Left>2.06058cm</Left>
+        <Height>0.6cm</Height>
+        <Width>10.22584cm</Width>
+        <ZIndex>9</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox16">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>NOMBRE DEL CONDUCTOR:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox16</rd:DefaultName>
+        <Top>9.62738cm</Top>
+        <Left>2.06058cm</Left>
+        <Height>0.97042cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>10</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox17">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CANTIDAD DE CERDOS</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox17</rd:DefaultName>
+        <Top>12.2203cm</Top>
+        <Left>3.19829cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.16688cm</Width>
+        <ZIndex>11</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox18">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>PESO PROMEDIO</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox18</rd:DefaultName>
+        <Top>12.2203cm</Top>
+        <Left>8.70161cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.32021cm</Width>
+        <ZIndex>12</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox19">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>GRANJA PROVENIENTE:</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value xml:space="preserve"> </Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Fields!Granja.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox19</rd:DefaultName>
+        <Top>10.9503cm</Top>
+        <Left>2.06058cm</Left>
+        <Height>0.6cm</Height>
+        <Width>10.22584cm</Width>
+        <ZIndex>13</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox20">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!NombreConductor.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox20</rd:DefaultName>
+        <Top>9.62738cm</Top>
+        <Left>4.73697cm</Left>
+        <Height>0.6cm</Height>
+        <Width>7.54945cm</Width>
+        <ZIndex>14</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox21">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Serie.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox21</rd:DefaultName>
+        <Top>8.70134cm</Top>
+        <Left>12.82912cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>15</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox22">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Folio.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox22</rd:DefaultName>
+        <Top>8.70134cm</Top>
+        <Left>16.00412cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>16</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox23">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Fecha.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox23</rd:DefaultName>
+        <Top>10.60662cm</Top>
+        <Left>12.82912cm</Left>
+        <Height>0.6cm</Height>
+        <Width>5.675cm</Width>
+        <ZIndex>17</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox24">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>CANALIZACION</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox24</rd:DefaultName>
+        <Top>12.2203cm</Top>
+        <Left>13.96683cm</Left>
+        <Height>0.6cm</Height>
+        <Width>3.18792cm</Width>
+        <ZIndex>18</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox25">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!CantidadCerdos.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox25</rd:DefaultName>
+        <Top>13.25217cm</Top>
+        <Left>4.04495cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>19</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox26">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!PesoPromedio.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox26</rd:DefaultName>
+        <Top>13.25217cm</Top>
+        <Left>9.20433cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>20</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox27">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Fields!Canalizacion.Value</Value>
+                <Style>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontWeight>Bold</FontWeight>
+                  <Color>Red</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox27</rd:DefaultName>
+        <Top>13.25217cm</Top>
+        <Left>13.46412cm</Left>
+        <Height>0.6cm</Height>
+        <Width>4.14042cm</Width>
+        <ZIndex>21</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+    </ReportItems>
+    <Height>5.87in</Height>
+    <Style />
+  </Body>
+  <Width>8.25in</Width>
+  <Page>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>2cm</LeftMargin>
+    <RightMargin>2cm</RightMargin>
+    <TopMargin>2cm</TopMargin>
+    <BottomMargin>2cm</BottomMargin>
+    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <Style />
+  </Page>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="GENERAL">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>6ed0fbcc-2b01-4d8d-ba66-8e922f7dc42a</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="TraerBoleta">
+      <Query>
+        <DataSourceName>GENERAL</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="idBoleta">
+          <DataField>idBoleta</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="codigoCli">
+          <DataField>codigoCli</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="nombreCli">
+          <DataField>nombreCli</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Serie">
+          <DataField>Serie</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Folio">
+          <DataField>Folio</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Fecha">
+          <DataField>Fecha</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="NombreConductor">
+          <DataField>NombreConductor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CantidadCerdos">
+          <DataField>CantidadCerdos</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="PesoPromedio">
+          <DataField>PesoPromedio</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="Canalizacion">
+          <DataField>Canalizacion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Granja">
+          <DataField>Granja</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Status">
+          <DataField>Status</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>GENERAL</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Eduardo\source\repos\FYRASA\FYRASA\DataSets\GENERAL.xsd</rd:SchemaPath>
+        <rd:TableName>TraerBoleta</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>TraerBoletaTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <EmbeddedImages>
+    <EmbeddedImage Name="InovasisV2">
+      <MIMEType>image/png</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportID>c9242ce9-126e-4d8e-acb5-66ca92b33fd7</rd:ReportID>
+</Report>

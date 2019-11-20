@@ -125,5 +125,16 @@ namespace FYRASA.Forms
         {
             Application.Exit();
         }
+
+        private void mnReporteProduccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnReportes_Click(object sender, EventArgs e)
+        {
+            Reportes reportes = new Reportes(this.conexion);
+            reportes.Show();
+        }
     }
 }

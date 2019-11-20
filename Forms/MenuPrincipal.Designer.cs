@@ -38,12 +38,12 @@
             this.mnControlUsuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnBoletas = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnNuevaBoleta = new System.Windows.Forms.ToolStripMenuItem();
             this.mnProduccion = new System.Windows.Forms.ToolStripMenuItem();
             this.mnControlProduccion = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.mnOrdenProduccion = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnBoletas = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnNuevaBoleta = new System.Windows.Forms.ToolStripMenuItem();
             this.mnPesos = new System.Windows.Forms.ToolStripMenuItem();
             this.mnPesoCaliente = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -51,7 +51,6 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnPesoCanastas = new System.Windows.Forms.ToolStripMenuItem();
             this.mnReportes = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnReporteProduccion = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -176,6 +175,22 @@
             this.mnSalir.Text = "Salir";
             this.mnSalir.Click += new System.EventHandler(this.MnSalir_Click);
             // 
+            // mnBoletas
+            // 
+            this.mnBoletas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnNuevaBoleta});
+            this.mnBoletas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mnBoletas.Name = "mnBoletas";
+            this.mnBoletas.Size = new System.Drawing.Size(72, 36);
+            this.mnBoletas.Text = "Boletas";
+            // 
+            // mnNuevaBoleta
+            // 
+            this.mnNuevaBoleta.Name = "mnNuevaBoleta";
+            this.mnNuevaBoleta.Size = new System.Drawing.Size(172, 26);
+            this.mnNuevaBoleta.Text = "Nueva boleta";
+            this.mnNuevaBoleta.Click += new System.EventHandler(this.MnNuevaBoleta_Click);
+            // 
             // mnProduccion
             // 
             this.mnProduccion.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -204,22 +219,6 @@
             this.mnOrdenProduccion.Size = new System.Drawing.Size(242, 26);
             this.mnOrdenProduccion.Text = "Ordenes de produccion";
             this.mnOrdenProduccion.Click += new System.EventHandler(this.MnOrdenProduccion_Click);
-            // 
-            // mnBoletas
-            // 
-            this.mnBoletas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnNuevaBoleta});
-            this.mnBoletas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnBoletas.Name = "mnBoletas";
-            this.mnBoletas.Size = new System.Drawing.Size(72, 36);
-            this.mnBoletas.Text = "Boletas";
-            // 
-            // mnNuevaBoleta
-            // 
-            this.mnNuevaBoleta.Name = "mnNuevaBoleta";
-            this.mnNuevaBoleta.Size = new System.Drawing.Size(172, 26);
-            this.mnNuevaBoleta.Text = "Nueva boleta";
-            this.mnNuevaBoleta.Click += new System.EventHandler(this.MnNuevaBoleta_Click);
             // 
             // mnPesos
             // 
@@ -267,18 +266,11 @@
             // 
             // mnReportes
             // 
-            this.mnReportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnReporteProduccion});
             this.mnReportes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnReportes.Name = "mnReportes";
             this.mnReportes.Size = new System.Drawing.Size(84, 36);
             this.mnReportes.Text = "Reportes";
-            // 
-            // mnReporteProduccion
-            // 
-            this.mnReporteProduccion.Name = "mnReporteProduccion";
-            this.mnReporteProduccion.Size = new System.Drawing.Size(238, 26);
-            this.mnReporteProduccion.Text = "Reporte de producción";
+            this.mnReportes.Click += new System.EventHandler(this.mnReportes_Click);
             // 
             // panel1
             // 
@@ -354,7 +346,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnNuevaBoleta;
         private System.Windows.Forms.ToolStripMenuItem mnPesoCaliente;
         private System.Windows.Forms.ToolStripMenuItem mnPesoFrio;
-        private System.Windows.Forms.ToolStripMenuItem mnReporteProduccion;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;

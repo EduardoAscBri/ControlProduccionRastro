@@ -20,6 +20,7 @@ namespace FYRASA.Forms
         private SqlCommand command;
         private DataTable dataTable = new DataTable();
         private string rutaLocal;
+        private int idBoleta;
         public Boletas()
         {
             InitializeComponent();
@@ -234,6 +235,11 @@ namespace FYRASA.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void bttImprimir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

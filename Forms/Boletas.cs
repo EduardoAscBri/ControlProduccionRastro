@@ -149,6 +149,7 @@ namespace FYRASA.Forms
                 this.txtCantidadCerdos.Text = dr["CantidadCerdos"].ToString();
                 this.txtPesoPromedio.Text = dr["PesoPromedio"].ToString();
                 this.txtGranja.Text = dr["Granja"].ToString();
+                this.idBoleta = Convert.ToInt32(dr["idBoleta"]);
             }
             else
             {
@@ -168,6 +169,7 @@ namespace FYRASA.Forms
             this.txtCantidadCerdos.Text = "";
             this.txtPesoPromedio.Text = "";
             this.txtGranja.Text = "";
+            this.idBoleta = 0;
 
         }
 
@@ -206,10 +208,13 @@ namespace FYRASA.Forms
                 ", '" + this.txtGranja.Text + "', " +
                 "0)";
 
+            this.idBoleta = (ultimoid + 1);
+
             lCommand = null;
             lCommand = new SqlCommand(lInsert, this.conexion);
             lCommand.ExecuteNonQuery();
 
+            imprimirBoleta();
             limpiar();
             MessageBox.Show("Boleta guardada");
         }
@@ -239,7 +244,13 @@ namespace FYRASA.Forms
 
         private void bttImprimir_Click(object sender, EventArgs e)
         {
+            imprimirBoleta();
+        }
 
+        private void imprimirBoleta()
+        {
+            VisorDeReportes visor = new VisorDeReportes(this.conexion);
+            visor.Boleta(this.idBoleta);
         }
     }
 }

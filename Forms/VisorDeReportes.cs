@@ -39,6 +39,32 @@ namespace FYRASA.Forms
         }
 
         //Metodos por reporte
+        public void Boleta(int idBoleta)
+        {
+            this.rvVisorReportes.LocalReport.DataSources.Clear();
+            this.dataSet.Clear();
+            this.dataTable.Clear();
+
+            this.command = new SqlCommand("TraerBoleta", this.conexion);
+            this.command.Parameters.AddWithValue("@idBoleta", idBoleta);
+            this.command.CommandType = CommandType.StoredProcedure;
+
+            this.dataAdapter = new SqlDataAdapter(this.command);
+            this.dataAdapter.Fill(this.dataTable);
+
+            this.dataTable.TableName = "TraerBoleta";
+            this.dataSet.Tables.Add(this.dataTable);
+
+            this.reportDataSource = new ReportDataSource("TraerBoleta", this.dataTable);
+            this.rvVisorReportes.LocalReport.DataSources.Add(this.reportDataSource);
+
+            this.rvVisorReportes.LocalReport.ReportEmbeddedResource = "FYRASA.Informes.Boleta.rdlc";
+
+            this.rvVisorReportes.RefreshReport();
+            this.ShowDialog();
+        }
+
+
         public void BoletasHistorico()
         {
             this.rvVisorReportes.LocalReport.DataSources.Clear();

@@ -30,20 +30,20 @@
         {
             this.panelWindows = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.bttCerrar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblLote = new System.Windows.Forms.Label();
+            this.lblNumeroCanal = new System.Windows.Forms.Label();
+            this.lblCanalizacion = new System.Windows.Forms.Label();
             this.bttSalir = new System.Windows.Forms.Button();
-            this.bttEntrar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.bttCerrar = new System.Windows.Forms.Button();
+            this.bttGuardar = new System.Windows.Forms.Button();
             this.panelWindows.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,51 @@
             this.lblTitle.Size = new System.Drawing.Size(63, 25);
             this.lblTitle.TabIndex = 3;
             this.lblTitle.Text = "Peso...";
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::FYRASA.Properties.Resources.Minimize_to_Taskbar;
+            this.button2.Location = new System.Drawing.Point(532, 0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(40, 32);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = global::FYRASA.Properties.Resources.Minimize_Maximize;
+            this.button1.Location = new System.Drawing.Point(572, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(40, 32);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // bttCerrar
+            // 
+            this.bttCerrar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bttCerrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.bttCerrar.FlatAppearance.BorderSize = 0;
+            this.bttCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.bttCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttCerrar.Image = global::FYRASA.Properties.Resources.Close;
+            this.bttCerrar.Location = new System.Drawing.Point(612, 0);
+            this.bttCerrar.Name = "bttCerrar";
+            this.bttCerrar.Size = new System.Drawing.Size(40, 32);
+            this.bttCerrar.TabIndex = 0;
+            this.bttCerrar.UseVisualStyleBackColor = true;
+            this.bttCerrar.Click += new System.EventHandler(this.BttCerrar_Click);
             // 
             // label2
             // 
@@ -128,35 +173,35 @@
             this.textBox1.Size = new System.Drawing.Size(186, 33);
             this.textBox1.TabIndex = 10;
             // 
-            // label5
+            // lblLote
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(81, 62);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(19, 21);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "...";
+            this.lblLote.AutoSize = true;
+            this.lblLote.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLote.Location = new System.Drawing.Point(81, 62);
+            this.lblLote.Name = "lblLote";
+            this.lblLote.Size = new System.Drawing.Size(19, 21);
+            this.lblLote.TabIndex = 6;
+            this.lblLote.Text = "...";
             // 
-            // label6
+            // lblNumeroCanal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(170, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(19, 21);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "...";
+            this.lblNumeroCanal.AutoSize = true;
+            this.lblNumeroCanal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumeroCanal.Location = new System.Drawing.Point(170, 103);
+            this.lblNumeroCanal.Name = "lblNumeroCanal";
+            this.lblNumeroCanal.Size = new System.Drawing.Size(19, 21);
+            this.lblNumeroCanal.TabIndex = 7;
+            this.lblNumeroCanal.Text = "...";
             // 
-            // label7
+            // lblCanalizacion
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(138, 144);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(19, 21);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "...";
+            this.lblCanalizacion.AutoSize = true;
+            this.lblCanalizacion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCanalizacion.Location = new System.Drawing.Point(138, 144);
+            this.lblCanalizacion.Name = "lblCanalizacion";
+            this.lblCanalizacion.Size = new System.Drawing.Size(19, 21);
+            this.lblCanalizacion.TabIndex = 8;
+            this.lblCanalizacion.Text = "...";
             // 
             // bttSalir
             // 
@@ -169,63 +214,19 @@
             this.bttSalir.TabIndex = 14;
             this.bttSalir.Text = "Salir";
             this.bttSalir.UseVisualStyleBackColor = true;
+            this.bttSalir.Click += new System.EventHandler(this.bttSalir_Click);
             // 
-            // bttEntrar
+            // bttGuardar
             // 
-            this.bttEntrar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
-            this.bttEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttEntrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttEntrar.Location = new System.Drawing.Point(337, 201);
-            this.bttEntrar.Name = "bttEntrar";
-            this.bttEntrar.Size = new System.Drawing.Size(120, 32);
-            this.bttEntrar.TabIndex = 13;
-            this.bttEntrar.Text = "Guardar";
-            this.bttEntrar.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Image = global::FYRASA.Properties.Resources.Minimize_to_Taskbar;
-            this.button2.Location = new System.Drawing.Point(532, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(40, 32);
-            this.button2.TabIndex = 2;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = global::FYRASA.Properties.Resources.Minimize_Maximize;
-            this.button1.Location = new System.Drawing.Point(572, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(40, 32);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
-            // 
-            // bttCerrar
-            // 
-            this.bttCerrar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.bttCerrar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.bttCerrar.FlatAppearance.BorderSize = 0;
-            this.bttCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.bttCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttCerrar.Image = global::FYRASA.Properties.Resources.Close;
-            this.bttCerrar.Location = new System.Drawing.Point(612, 0);
-            this.bttCerrar.Name = "bttCerrar";
-            this.bttCerrar.Size = new System.Drawing.Size(40, 32);
-            this.bttCerrar.TabIndex = 0;
-            this.bttCerrar.UseVisualStyleBackColor = true;
-            this.bttCerrar.Click += new System.EventHandler(this.BttCerrar_Click);
+            this.bttGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.bttGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttGuardar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttGuardar.Location = new System.Drawing.Point(337, 201);
+            this.bttGuardar.Name = "bttGuardar";
+            this.bttGuardar.Size = new System.Drawing.Size(120, 32);
+            this.bttGuardar.TabIndex = 13;
+            this.bttGuardar.Text = "Guardar";
+            this.bttGuardar.UseVisualStyleBackColor = true;
             // 
             // Pesos
             // 
@@ -233,10 +234,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 256);
             this.Controls.Add(this.bttSalir);
-            this.Controls.Add(this.bttEntrar);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.bttGuardar);
+            this.Controls.Add(this.lblCanalizacion);
+            this.Controls.Add(this.lblNumeroCanal);
+            this.Controls.Add(this.lblLote);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -258,7 +259,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panelWindows;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bttCerrar;
@@ -266,12 +266,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblLote;
+        private System.Windows.Forms.Label lblNumeroCanal;
+        private System.Windows.Forms.Label lblCanalizacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.Button bttSalir;
-        public System.Windows.Forms.Button bttEntrar;
+        public System.Windows.Forms.Button bttGuardar;
+        public System.Windows.Forms.Label lblTitle;
     }
 }

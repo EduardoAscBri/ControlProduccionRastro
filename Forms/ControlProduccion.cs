@@ -99,7 +99,8 @@ namespace FYRASA.Forms
                     "LEFT JOIN Boletas " +
                     "ON OrdenesProduccion.idBoleta = Boletas.idBoleta " +
                     "LEFT JOIN Lotes " +
-                    "ON Lotes.idOrdenProduccion = OrdenesProduccion.idOrdenProduccion", this.conexion);
+                    "ON Lotes.idOrdenProduccion = OrdenesProduccion.idOrdenProduccion " +
+                    "WHERE Produccion.Status = 0", this.conexion);
 
                 this.command.ExecuteNonQuery();
 
@@ -126,6 +127,11 @@ namespace FYRASA.Forms
                 else if(registros > 1)
                 {
                     MessageBox.Show("Error: Varios registros (" + registros + ")");
+                    return false;
+                }
+                else if (registros == 0)
+                {
+                    MessageBox.Show("No hay produccion actual");
                     return false;
                 }
             }
@@ -243,6 +249,9 @@ namespace FYRASA.Forms
         {
             try
             {
+                this.command = new SqlCommand("DELETE FROM Produccion", this.conexion);
+                this.command.ExecuteNonQuery();
+
                 this.command = new SqlCommand("INSERT INTO Produccion VALUES (" + this.idOrdenProduccion + ", " + 0 + ")", this.conexion);
                 this.command.ExecuteNonQuery();
             }
@@ -270,7 +279,7 @@ namespace FYRASA.Forms
         {
             try
             {
-                this.command = new SqlCommand("DELETE FROM Produccion", this.conexion);
+                this.command = new SqlCommand("UPDATE Produccion SET Status = 1", this.conexion);
                 this.command.ExecuteNonQuery();
 
                 this.command = new SqlCommand("UPDATE OrdenesProduccion SET Status = 1 WHERE idOrdenProduccion = " + this.idOrdenProduccion, this.conexion);

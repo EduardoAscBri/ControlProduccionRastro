@@ -15,7 +15,9 @@ namespace FYRASA.Forms
         public PesosCanastas()
         {
             InitializeComponent();
+            this.lblTitle.Text = "Peso en canastas";
         }
+
 
         private void PesosCanastas_Load(object sender, EventArgs e)
         {

@@ -93,19 +93,19 @@ namespace FYRASA.Forms
 
         private void MnPesoCaliente_Click(object sender, EventArgs e)
         {
-            Pesos pesoCaliente = new Pesos(1);
+            Pesos pesoCaliente = new Pesos(this.conexion, 1);
             pesoCaliente.Show();
         }
 
         private void MnPesoFrio_Click(object sender, EventArgs e)
         {
-            Pesos pesoFrio = new Pesos(2);
+            Pesos pesoFrio = new Pesos(this.conexion, 2);
             pesoFrio.Show();
         }
 
         private void MnPesoCanastas_Click(object sender, EventArgs e)
         {
-            Pesos pesoCanastas = new Pesos(3);
+            PesosCanastas pesoCanastas = new PesosCanastas();
             pesoCanastas.Show();
         }
 

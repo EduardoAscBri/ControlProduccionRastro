@@ -1,10 +1,14 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using Gma.QrCodeNet.Encoding;
+using Gma.QrCodeNet.Encoding.Windows.Render;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +23,7 @@ namespace FYRASA.Forms
         SqlDataAdapter dataAdapter;
         DataSet dataSet = new DataSet();
         DataTable dataTable = new DataTable();
+        DataRow dataRow;
         ReportDataSource reportDataSource;
 
         public VisorDeReportes()
@@ -62,6 +67,84 @@ namespace FYRASA.Forms
 
             this.rvVisorReportes.RefreshReport();
             this.ShowDialog();
+        }
+
+        public void Pulsera(string loteCanal, int numeroCanal)
+        {
+            
+            string lString = loteCanal + ":::" + numeroCanal.ToString();
+            string lRuta = Path.GetTempPath().ToString() + "qrCode.bmp";
+
+            QrEncoder encoder = new QrEncoder(ErrorCorrectionLevel.H);
+            QrCode lQrCode = encoder.Encode(lString);
+
+            GraphicsRenderer renderer = new GraphicsRenderer(new FixedModuleSize(5, QuietZoneModules.Two), Brushes.Black, Brushes.White);
+
+            FileStream fileStream = new FileStream(lRuta, FileMode.Create);
+            renderer.WriteToStream(lQrCode.Matrix, ImageFormat.Bmp, fileStream);
+            fileStream.Close();
+
+            Image imageQRCode = Image.FromFile(lRuta);
+
+            //FIN
+
+            this.rvVisorReportes.LocalReport.DataSources.Clear();
+            this.dataSet.Clear();
+            this.dataTable.Clear();
+
+            this.dataTable = new DataTable("Pulsera");
+
+            DataColumn colLote = new DataColumn();
+            colLote.DataType = System.Type.GetType("System.String");
+            colLote.ColumnName = "lote";
+
+            DataColumn colNumeroCanal = new DataColumn();
+            colNumeroCanal.DataType = System.Type.GetType("System.Int32");
+            colNumeroCanal.ColumnName = "numeroCanal";
+
+            DataColumn colQRCode = new DataColumn();
+            colQRCode.DataType = System.Type.GetType("System.Byte[]");
+            colQRCode.ColumnName = "qrCode";
+
+            this.dataTable.Columns.Add(colLote);
+            this.dataTable.Columns.Add(colNumeroCanal);
+            this.dataTable.Columns.Add(colQRCode);
+
+            int rows = this.dataTable.Rows.Count;
+            MessageBox.Show(rows.ToString());
+
+            this.dataRow = this.dataTable.NewRow();
+
+            rows = this.dataTable.Rows.Count;
+            MessageBox.Show(rows.ToString());
+
+            this.dataRow["lote"] = loteCanal;
+            this.dataRow["numeroCanal"] = numeroCanal;
+            this.dataRow["qrCode"] = GetBytes(imageQRCode);
+            this.dataTable.Rows.Add(this.dataRow);
+
+            this.dataSet.Tables.Add(this.dataTable);
+
+            rows = this.dataTable.Rows.Count;
+            MessageBox.Show(rows.ToString());
+
+            this.reportDataSource = new ReportDataSource("Pulsera", this.dataTable);
+            this.rvVisorReportes.LocalReport.DataSources.Add(this.reportDataSource);
+
+            this.rvVisorReportes.LocalReport.ReportEmbeddedResource = "FYRASA.Informes.Pulsera.rdlc";
+
+            this.rvVisorReportes.RefreshReport();
+            this.ShowDialog();
+
+
+        }
+
+        private byte[] GetBytes(Image imageInput)
+        {
+            MemoryStream memoryStream = new MemoryStream();
+            imageInput.Save(memoryStream, ImageFormat.Bmp);
+
+            return memoryStream.ToArray();
         }
 
 

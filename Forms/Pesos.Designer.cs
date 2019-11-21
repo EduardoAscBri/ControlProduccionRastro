@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
             this.lblLote = new System.Windows.Forms.Label();
             this.lblNumeroCanal = new System.Windows.Forms.Label();
             this.lblCanalizacion = new System.Windows.Forms.Label();
@@ -149,7 +149,7 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtPeso);
             this.panel1.Location = new System.Drawing.Point(312, 65);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(300, 100);
@@ -165,13 +165,13 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "KG";
             // 
-            // textBox1
+            // txtPeso
             // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(45, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 33);
-            this.textBox1.TabIndex = 10;
+            this.txtPeso.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPeso.Location = new System.Drawing.Point(45, 38);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(186, 33);
+            this.txtPeso.TabIndex = 10;
             // 
             // lblLote
             // 
@@ -227,6 +227,7 @@
             this.bttGuardar.TabIndex = 13;
             this.bttGuardar.Text = "Guardar";
             this.bttGuardar.UseVisualStyleBackColor = true;
+            this.bttGuardar.Click += new System.EventHandler(this.bttGuardar_Click);
             // 
             // Pesos
             // 
@@ -270,7 +271,7 @@
         private System.Windows.Forms.Label lblNumeroCanal;
         private System.Windows.Forms.Label lblCanalizacion;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPeso;
         public System.Windows.Forms.Button bttSalir;
         public System.Windows.Forms.Button bttGuardar;
         public System.Windows.Forms.Label lblTitle;

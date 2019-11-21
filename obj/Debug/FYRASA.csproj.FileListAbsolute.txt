@@ -79,3 +79,6 @@ C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\RdlCompile.compiled
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\FYRASA.csproj.CopyComplete
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\FYRASA.Forms.Reportes.resources
 C:\Users\Eduardo\source\repos\FYRASA\FYRASA\obj\Debug\FYRASA.Forms.VisorDeReportes.resources
+C:\Users\Eduardo\source\repos\FYRASA\FYRASA\bin\Debug\Gma.QrCodeNet.Encoding.dll
+C:\Users\Eduardo\source\repos\FYRASA\FYRASA\bin\Debug\Gma.QrCodeNet.Encoding.pdb
+C:\Users\Eduardo\source\repos\FYRASA\FYRASA\bin\Debug\Gma.QrCodeNet.Encoding.xml

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Gma.QrCodeNet.Encoding, Version=0.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QrCode.Net.0.4.0.0\lib\net45\Gma.QrCodeNet.Encoding.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1400.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -65,6 +68,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GENERAL.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Pulsera.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Pulsera.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\Boletas.cs">
       <SubType>Form</SubType>
@@ -179,6 +187,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Informes\Boleta.rdlc" />
     <EmbeddedResource Include="Informes\BoletasHistorico.rdlc" />
+    <EmbeddedResource Include="Informes\Pulsera.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -200,7 +209,19 @@
     <None Include="DataSets\GENERAL.xss">
       <DependentUpon>GENERAL.xsd</DependentUpon>
     </None>
+    <None Include="DataSets\Pulsera.xsc">
+      <DependentUpon>Pulsera.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Pulsera.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Pulsera.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\Pulsera.xss">
+      <DependentUpon>Pulsera.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\FYRASA.Classes.Pulsera.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -244,8 +265,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

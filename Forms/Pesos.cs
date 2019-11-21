@@ -20,11 +20,13 @@ namespace FYRASA.Forms
         public DataTable dataTable = new DataTable();
         public DataRow dataRow;
 
+        public int tipoPeso;
         public int idOrdenProduccion;
         public int status;
         public int idLote;
         public string lote;
         public string canalizacion;
+        public int numeroCanal;
 
 
         public Pesos()
@@ -36,20 +38,21 @@ namespace FYRASA.Forms
         {
             InitializeComponent();
             this.conexion = conexion;
-            validarProduccion();
 
             switch (tipoPeso)
             {
                 case 1:
                     this.lblTitle.Text = "PesoCaliente";
-                    pesoCaliente();
+                    this.tipoPeso = tipoPeso;
                     break;
 
                 case 2:
                     this.lblTitle.Text = "Peso frio";
-                    pesoFrio();
+                    this.tipoPeso = tipoPeso;
                     break;
             }
+
+            validarProduccion();
 
         }
 
@@ -129,6 +132,7 @@ namespace FYRASA.Forms
                         this.lblLote.Text = this.lote;
                         this.lblCanalizacion.Text = this.canalizacion;
 
+                        nuevoPeso();
                     }
                     else if (this.idOrdenProduccion != 0 && this.status == 1)
                     {
@@ -153,14 +157,88 @@ namespace FYRASA.Forms
         }
 
 
-        public void pesoCaliente()
+        public void nuevoPeso()
+        {
+            try
+            {
+                this.command = new SqlCommand("SELECT ISNULL(MAX(numeroCanal), 0) AS numeroCanal " +
+                    "FROM LotesDetalle " +
+                    "WHERE tipoPeso = " + this.tipoPeso, this.conexion);
+                int ultimoDetalle = Convert.ToInt32(this.command.ExecuteScalar());
+                this.numeroCanal = ultimoDetalle + 1;
+
+                this.lblNumeroCanal.Text = this.numeroCanal.ToString();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void bttGuardar_Click(object sender, EventArgs e)
+        {
+            switch (this.tipoPeso)
+            {
+                case 1:
+                    guardarPeso();
+                    break;
+
+                case 2:
+                    guardarPeso();
+                    break;
+
+                case 3:
+                    guardarPesoCanastas();
+                    break;
+            }
+        }
+
+        public void guardarPeso()
+        {
+            try
+            {
+                this.command = new SqlCommand("SELECT ISNULL(MAX(idLoteDetalle), 0) AS idLoteDetalle FROM LotesDetalle", this.conexion);
+                int ultimoId = Convert.ToInt32(this.command.ExecuteScalar());
+
+                this.command = new SqlCommand("INSERT INTO LotesDetalle VALUES (" + (ultimoId + 1) + ", " +
+                    this.idLote + ", " +
+                    this.tipoPeso + ", " +
+                    this.numeroCanal + ", " +
+                    this.txtPeso.Text + ", " +
+                    "null)", this.conexion);
+                this.command.ExecuteNonQuery();
+
+                if(this.tipoPeso == 1)
+                {
+                    VisorDeReportes visor = new VisorDeReportes(this.conexion);
+                    visor.Pulsera(this.lote, this.numeroCanal);
+                }
+
+
+                limpiar();
+                MessageBox.Show("Peso digitalizado");
+                validarProduccion();
+                this.bttGuardar.Focus();
+            }
+            catch(SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void guardarPesoCanastas()
         {
 
         }
 
-        public void pesoFrio()
+        private void limpiar()
         {
-
+            this.lblLote.Text = "...";
+            this.lblNumeroCanal.Text = "...";
+            this.lblCanalizacion.Text = "...";
+            this.txtPeso.Text = "";
         }
+
+        
     }
 }

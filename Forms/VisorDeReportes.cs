@@ -73,7 +73,7 @@ namespace FYRASA.Forms
         {
             
             string lString = loteCanal + ":::" + numeroCanal.ToString();
-            string lRuta = Path.GetTempPath().ToString() + loteCanal + numeroCanal + "qrCode.bmp";
+            string lRuta = Path.GetTempPath().ToString() + numeroCanal + "qrCode.bmp";
 
             QrEncoder encoder = new QrEncoder(ErrorCorrectionLevel.H);
             QrCode lQrCode = encoder.Encode(lString);
@@ -206,6 +206,61 @@ namespace FYRASA.Forms
 
             this.rvVisorReportes.RefreshReport();
             this.ShowDialog();
+        }
+
+        public void EtiquetaCanasta(int idLoteDetalle)
+        {
+            this.rvVisorReportes.LocalReport.DataSources.Clear();
+            this.dataSet.Clear();
+            this.dataTable.Clear();
+
+            this.command = new SqlCommand("EtiquetaCanasta", this.conexion);
+            this.command.Parameters.AddWithValue("@idLoteDetalle", idLoteDetalle);
+            this.command.CommandType = CommandType.StoredProcedure;
+
+            this.dataAdapter = new SqlDataAdapter(this.command);
+            this.dataAdapter.Fill(this.dataTable);
+
+            this.dataTable.TableName = "EtiquetaCanasta";
+            this.dataSet.Tables.Add(this.dataTable);
+
+            this.reportDataSource = new ReportDataSource("EtiquetaCanasta", this.dataTable);
+            this.rvVisorReportes.LocalReport.DataSources.Add(this.reportDataSource);
+
+            this.rvVisorReportes.LocalReport.ReportEmbeddedResource = "FYRASA.Informes.EtiquetaCanasta.rdlc";
+
+            this.rvVisorReportes.RefreshReport();
+            this.ShowDialog();
+        }
+
+        public void LoteDetalle(string lote)
+        {
+            this.rvVisorReportes.LocalReport.DataSources.Clear();
+            this.dataSet.Clear();
+            this.dataTable.Clear();
+
+            this.command = new SqlCommand("LoteDetalle", this.conexion);
+            this.command.Parameters.AddWithValue("@Lote", lote);
+            this.command.CommandType = CommandType.StoredProcedure;
+
+            this.dataAdapter = new SqlDataAdapter(this.command);
+            this.dataAdapter.Fill(this.dataTable);
+
+            this.dataTable.TableName = "LoteDetalle";
+            this.dataSet.Tables.Add(this.dataTable);
+
+            this.reportDataSource = new ReportDataSource("LoteDetalle", this.dataTable);
+            this.rvVisorReportes.LocalReport.DataSources.Add(this.reportDataSource);
+
+            this.rvVisorReportes.LocalReport.ReportEmbeddedResource = "FYRASA.Informes.LotesDetalle.rdlc";
+
+            this.rvVisorReportes.RefreshReport();
+            this.ShowDialog();
+        }
+
+        private void rvVisorReportes_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

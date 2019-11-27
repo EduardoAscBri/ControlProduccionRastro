@@ -58,5 +58,32 @@ namespace FYRASA.Forms
             VisorDeReportes visor = new VisorDeReportes(this.conexion);
             visor.OrdenesHistorico();
         }
+
+        private void Reportes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttResumenProduccion_Click(object sender, EventArgs e)
+        {
+
+            PopUpForm popUp = new PopUpForm("Lote", "Esccriba el lote a consultar", 0);
+            popUp.ShowDialog();
+            if(popUp.DialogResult == DialogResult.OK)
+            {
+                string lote = popUp.Answer;
+                VisorDeReportes visor = new VisorDeReportes(this.conexion);
+                visor.LoteDetalle(lote);
+            }
+            else
+            {
+                MessageBox.Show("Necesita capturar un lote");
+            }
+
+
+
+
+
+        }
     }
 }

@@ -93,8 +93,6 @@ namespace FYRASA.Forms
                 this.command = new SqlCommand("SELECT ISNULL(MAX(idLoteDetalle), 0) AS idLoteDetalle FROM LotesDetalle", this.conexion);
                 int ultimoId = Convert.ToInt32(this.command.ExecuteScalar());
 
-                MessageBox.Show(this.nombreCorte);
-
                 this.command = new SqlCommand("INSERT INTO LotesDetalle VALUES (" + (ultimoId + 1) + ", " +
                     this.idLote + ", " +
                     this.tipoPeso + ", " +
@@ -106,8 +104,9 @@ namespace FYRASA.Forms
                 if (this.tipoPeso == 3)
                 {
                     VisorDeReportes visor = new VisorDeReportes(this.conexion);
-                    //visor.Canasta(this.lote, this.numeroCanal);
+                    visor.EtiquetaCanasta((ultimoId + 1));
                 }
+
 
                 limpiar();
                 MessageBox.Show("Peso digitalizado");

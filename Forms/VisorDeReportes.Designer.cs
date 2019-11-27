@@ -112,6 +112,7 @@
             this.rvVisorReportes.ServerReport.BearerToken = null;
             this.rvVisorReportes.Size = new System.Drawing.Size(800, 418);
             this.rvVisorReportes.TabIndex = 3;
+            this.rvVisorReportes.Load += new System.EventHandler(this.rvVisorReportes_Load);
             // 
             // VisorDeReportes
             // 

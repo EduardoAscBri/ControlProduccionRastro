@@ -35,7 +35,7 @@
             this.bttCerrar = new System.Windows.Forms.Button();
             this.bttBoletasHistorico = new System.Windows.Forms.Button();
             this.bttOrdenesHistorico = new System.Windows.Forms.Button();
-            this.bttLotesLista = new System.Windows.Forms.Button();
+            this.bttResumenProduccion = new System.Windows.Forms.Button();
             this.panelWindows.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,30 +132,32 @@
             this.bttOrdenesHistorico.UseVisualStyleBackColor = true;
             this.bttOrdenesHistorico.Click += new System.EventHandler(this.bttOrdenesHistorico_Click);
             // 
-            // bttLotesLista
+            // bttResumenProduccion
             // 
-            this.bttLotesLista.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
-            this.bttLotesLista.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bttLotesLista.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttLotesLista.Location = new System.Drawing.Point(17, 145);
-            this.bttLotesLista.Name = "bttLotesLista";
-            this.bttLotesLista.Size = new System.Drawing.Size(463, 32);
-            this.bttLotesLista.TabIndex = 103;
-            this.bttLotesLista.Text = "Lista de lotes de produccion";
-            this.bttLotesLista.UseVisualStyleBackColor = true;
+            this.bttResumenProduccion.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlDark;
+            this.bttResumenProduccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttResumenProduccion.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttResumenProduccion.Location = new System.Drawing.Point(17, 147);
+            this.bttResumenProduccion.Name = "bttResumenProduccion";
+            this.bttResumenProduccion.Size = new System.Drawing.Size(463, 32);
+            this.bttResumenProduccion.TabIndex = 103;
+            this.bttResumenProduccion.Text = "Resumen de producción";
+            this.bttResumenProduccion.UseVisualStyleBackColor = true;
+            this.bttResumenProduccion.Click += new System.EventHandler(this.bttResumenProduccion_Click);
             // 
             // Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(492, 270);
-            this.Controls.Add(this.bttLotesLista);
+            this.Controls.Add(this.bttResumenProduccion);
             this.Controls.Add(this.bttOrdenesHistorico);
             this.Controls.Add(this.bttBoletasHistorico);
             this.Controls.Add(this.panelWindows);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Reportes";
             this.Text = "Reportes";
+            this.Load += new System.EventHandler(this.Reportes_Load);
             this.panelWindows.ResumeLayout(false);
             this.panelWindows.PerformLayout();
             this.ResumeLayout(false);
@@ -171,6 +173,6 @@
         private System.Windows.Forms.Button bttCerrar;
         private System.Windows.Forms.Button bttBoletasHistorico;
         private System.Windows.Forms.Button bttOrdenesHistorico;
-        private System.Windows.Forms.Button bttLotesLista;
+        private System.Windows.Forms.Button bttResumenProduccion;
     }
 }

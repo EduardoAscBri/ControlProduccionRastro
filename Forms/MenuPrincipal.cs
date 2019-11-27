@@ -87,8 +87,7 @@ namespace FYRASA.Forms
             this.mnBoletas.Enabled = this.usuarioActivo.boletas == 1 ? true : false;
             this.mnPesos.Enabled = this.usuarioActivo.pesos == 1 ? true : false;
             this.mnReportes.Enabled = this.usuarioActivo.reportes == 1 ? true : false;
-            this.mnControlProduccion.Enabled = this.usuarioActivo.ordenesProduccion == 1 ? true : false;
-            this.mnOrdenProduccion.Enabled = this.usuarioActivo.ordenesProduccion == 1 ? true : false;
+            this.mnProduccion.Enabled = this.usuarioActivo.produccion == 1 ? true : false;
         }
 
         private void MnPesoCaliente_Click(object sender, EventArgs e)

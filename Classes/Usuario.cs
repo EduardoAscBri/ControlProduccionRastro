@@ -15,7 +15,7 @@ namespace FYRASA.Classes
         public int boletas;
         public int pesos;
         public int reportes;
-        public int ordenesProduccion;
+        public int produccion;
 
         public Usuario()
         {

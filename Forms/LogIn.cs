@@ -84,7 +84,7 @@ namespace FYRASA.Forms
                     usuario.boletas = Convert.ToInt32(this.dataRow["Boletas"]);
                     usuario.pesos = Convert.ToInt32(this.dataRow["Pesos"]);
                     usuario.reportes = Convert.ToInt32(this.dataRow["Reportes"]);
-                    usuario.ordenesProduccion = Convert.ToInt32(this.dataRow["OrdenesProduccion"]);
+                    usuario.produccion = Convert.ToInt32(this.dataRow["OrdenesProduccion"]);
 
                     MenuPrincipal menuPrincipal = new MenuPrincipal(this.conexion, this.usuario);
                     menuPrincipal.Show();

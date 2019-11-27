@@ -97,6 +97,7 @@ namespace FYRASA.Forms
             this.chkOrdenesProduccion.Checked = Convert.ToInt32(dataRow["OrdenesProduccion"]) == 1 ? true : false;
             //Define como falso la propiedad que indica si es un usuario nuevo o no
             this.nuevo = false;
+            this.txtGuardar.Enabled = true;
         }
 
         //Evento clic del boton salir

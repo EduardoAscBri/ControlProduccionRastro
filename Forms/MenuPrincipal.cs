@@ -105,7 +105,7 @@ namespace FYRASA.Forms
 
         private void MnPesoCanastas_Click(object sender, EventArgs e)
         {
-            PesosCanastas pesoCanastas = new PesosCanastas();
+            PesosCanastas pesoCanastas = new PesosCanastas(this.conexion, 3);
             pesoCanastas.Show();
         }
 

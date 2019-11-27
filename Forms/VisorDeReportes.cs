@@ -73,7 +73,7 @@ namespace FYRASA.Forms
         {
             
             string lString = loteCanal + ":::" + numeroCanal.ToString();
-            string lRuta = Path.GetTempPath().ToString() + "qrCode.bmp";
+            string lRuta = Path.GetTempPath().ToString() + loteCanal + numeroCanal + "qrCode.bmp";
 
             QrEncoder encoder = new QrEncoder(ErrorCorrectionLevel.H);
             QrCode lQrCode = encoder.Encode(lString);
@@ -110,23 +110,13 @@ namespace FYRASA.Forms
             this.dataTable.Columns.Add(colNumeroCanal);
             this.dataTable.Columns.Add(colQRCode);
 
-            int rows = this.dataTable.Rows.Count;
-            MessageBox.Show(rows.ToString());
-
             this.dataRow = this.dataTable.NewRow();
-
-            rows = this.dataTable.Rows.Count;
-            MessageBox.Show(rows.ToString());
 
             this.dataRow["lote"] = loteCanal;
             this.dataRow["numeroCanal"] = numeroCanal;
             this.dataRow["qrCode"] = GetBytes(imageQRCode);
             this.dataTable.Rows.Add(this.dataRow);
-
             this.dataSet.Tables.Add(this.dataTable);
-
-            rows = this.dataTable.Rows.Count;
-            MessageBox.Show(rows.ToString());
 
             this.reportDataSource = new ReportDataSource("Pulsera", this.dataTable);
             this.rvVisorReportes.LocalReport.DataSources.Add(this.reportDataSource);
@@ -192,6 +182,30 @@ namespace FYRASA.Forms
         private void bttCerrar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        public void OrdenesHistorico()
+        {
+            this.rvVisorReportes.LocalReport.DataSources.Clear();
+            this.dataSet.Clear();
+            this.dataTable.Clear();
+
+            this.command = new SqlCommand("OrdenesHistorico", this.conexion);
+            this.command.CommandType = CommandType.StoredProcedure;
+
+            this.dataAdapter = new SqlDataAdapter(this.command);
+            this.dataAdapter.Fill(this.dataTable);
+
+            this.dataTable.TableName = "OrdenesHistorico";
+            this.dataSet.Tables.Add(this.dataTable);
+
+            this.reportDataSource = new ReportDataSource("OrdenesHistorico", this.dataTable);
+            this.rvVisorReportes.LocalReport.DataSources.Add(this.reportDataSource);
+
+            this.rvVisorReportes.LocalReport.ReportEmbeddedResource = "FYRASA.Informes.OrdenesHistorico.rdlc";
+
+            this.rvVisorReportes.RefreshReport();
+            this.ShowDialog();
         }
     }
 }

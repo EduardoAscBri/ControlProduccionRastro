@@ -52,5 +52,11 @@ namespace FYRASA.Forms
         {
             this.Dispose();
         }
+
+        private void bttOrdenesHistorico_Click(object sender, EventArgs e)
+        {
+            VisorDeReportes visor = new VisorDeReportes(this.conexion);
+            visor.OrdenesHistorico();
+        }
     }
 }

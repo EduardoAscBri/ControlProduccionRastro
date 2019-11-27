@@ -189,6 +189,7 @@ namespace FYRASA.Forms
                 int currentRow = this.dgvOrdenesProduccion.CurrentRow.Index;
                 this.dataRow = this.dataTable.Rows[currentRow];
                 int idOrdenProduccion = Convert.ToInt32(this.dataRow["idOrdenProduccion"]);
+                MessageBox.Show("Orden de produccion seleccionada: " + idOrdenProduccion);
 
                 if (idOrdenProduccion != 0)
                 {
@@ -231,7 +232,7 @@ namespace FYRASA.Forms
                 }
                 else
                 {
-                    MessageBox.Show("");
+                    MessageBox.Show("Produccion sin concluir");
                 }
             }
             else

@@ -130,6 +130,7 @@
             this.bttOrdenesHistorico.TabIndex = 102;
             this.bttOrdenesHistorico.Text = "Ordenes de produccion - Historico";
             this.bttOrdenesHistorico.UseVisualStyleBackColor = true;
+            this.bttOrdenesHistorico.Click += new System.EventHandler(this.bttOrdenesHistorico_Click);
             // 
             // bttLotesLista
             // 

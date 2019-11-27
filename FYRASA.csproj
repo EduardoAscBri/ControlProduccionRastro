@@ -186,6 +186,7 @@
       <DependentUpon>VisorDeReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Informes\Boleta.rdlc" />
+    <EmbeddedResource Include="Informes\OrdenesHistorico.rdlc" />
     <EmbeddedResource Include="Informes\BoletasHistorico.rdlc" />
     <EmbeddedResource Include="Informes\Pulsera.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -251,6 +252,7 @@
     <None Include="Resources\Floating Logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\CortesPorcino.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

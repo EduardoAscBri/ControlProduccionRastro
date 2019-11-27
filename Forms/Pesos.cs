@@ -27,7 +27,7 @@ namespace FYRASA.Forms
         public string lote;
         public string canalizacion;
         public int numeroCanal;
-
+        public string nombreCorte;
 
         public Pesos()
         {
@@ -44,11 +44,13 @@ namespace FYRASA.Forms
                 case 1:
                     this.lblTitle.Text = "PesoCaliente";
                     this.tipoPeso = tipoPeso;
+                    this.txtNumeroCanal.Visible = false;
                     break;
 
                 case 2:
                     this.lblTitle.Text = "Peso frio";
                     this.tipoPeso = tipoPeso;
+                    this.txtNumeroCanal.Visible = true;
                     break;
             }
 
@@ -159,19 +161,27 @@ namespace FYRASA.Forms
 
         public void nuevoPeso()
         {
-            try
+            if(this.tipoPeso == 1)
             {
-                this.command = new SqlCommand("SELECT ISNULL(MAX(numeroCanal), 0) AS numeroCanal " +
-                    "FROM LotesDetalle " +
-                    "WHERE tipoPeso = " + this.tipoPeso, this.conexion);
-                int ultimoDetalle = Convert.ToInt32(this.command.ExecuteScalar());
-                this.numeroCanal = ultimoDetalle + 1;
+                try
+                {
+                    this.command = new SqlCommand("SELECT ISNULL(MAX(numeroCanal), 0) AS numeroCanal " +
+                        "FROM LotesDetalle " +
+                        "WHERE (tipoPeso = " + this.tipoPeso + ") AND (idLote = " + this.idLote + ")", this.conexion);
+                    int ultimoDetalle = Convert.ToInt32(this.command.ExecuteScalar());
+                    this.numeroCanal = ultimoDetalle + 1;
 
-                this.lblNumeroCanal.Text = this.numeroCanal.ToString();
+                    this.lblNumeroCanal.Text = this.numeroCanal.ToString();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (SqlException ex)
+            else if(this.tipoPeso == 2)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Debe ser capturado el numero del canal a pesar");
+                this.txtNumeroCanal.Focus();
             }
         }
 
@@ -188,7 +198,7 @@ namespace FYRASA.Forms
                     break;
 
                 case 3:
-                    guardarPesoCanastas();
+                    
                     break;
             }
         }
@@ -197,6 +207,12 @@ namespace FYRASA.Forms
         {
             try
             {
+                if(this.tipoPeso == 2)
+                {
+                    this.numeroCanal = Convert.ToInt32(this.txtNumeroCanal.Text);
+                }
+
+
                 this.command = new SqlCommand("SELECT ISNULL(MAX(idLoteDetalle), 0) AS idLoteDetalle FROM LotesDetalle", this.conexion);
                 int ultimoId = Convert.ToInt32(this.command.ExecuteScalar());
 
@@ -214,7 +230,6 @@ namespace FYRASA.Forms
                     visor.Pulsera(this.lote, this.numeroCanal);
                 }
 
-
                 limpiar();
                 MessageBox.Show("Peso digitalizado");
                 validarProduccion();
@@ -226,17 +241,15 @@ namespace FYRASA.Forms
             }
         }
 
-        public void guardarPesoCanastas()
-        {
 
-        }
 
-        private void limpiar()
+        public void limpiar()
         {
             this.lblLote.Text = "...";
             this.lblNumeroCanal.Text = "...";
             this.lblCanalizacion.Text = "...";
             this.txtPeso.Text = "";
+            this.txtNumeroCanal.Text = "";
         }
 
         

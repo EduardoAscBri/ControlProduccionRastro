@@ -73,6 +73,16 @@ namespace FYRASA.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CortesPorcino {
+            get {
+                object obj = ResourceManager.GetObject("CortesPorcino", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Floating_Logo {
             get {
                 object obj = ResourceManager.GetObject("Floating Logo", resourceCulture);

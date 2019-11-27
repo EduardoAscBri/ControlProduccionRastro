@@ -44,6 +44,7 @@
             this.lblCanalizacion = new System.Windows.Forms.Label();
             this.bttSalir = new System.Windows.Forms.Button();
             this.bttGuardar = new System.Windows.Forms.Button();
+            this.txtNumeroCanal = new System.Windows.Forms.TextBox();
             this.panelWindows.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -229,11 +230,20 @@
             this.bttGuardar.UseVisualStyleBackColor = true;
             this.bttGuardar.Click += new System.EventHandler(this.bttGuardar_Click);
             // 
+            // txtNumeroCanal
+            // 
+            this.txtNumeroCanal.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumeroCanal.Location = new System.Drawing.Point(170, 97);
+            this.txtNumeroCanal.Name = "txtNumeroCanal";
+            this.txtNumeroCanal.Size = new System.Drawing.Size(78, 33);
+            this.txtNumeroCanal.TabIndex = 12;
+            // 
             // Pesos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(652, 256);
+            this.Controls.Add(this.txtNumeroCanal);
             this.Controls.Add(this.bttSalir);
             this.Controls.Add(this.bttGuardar);
             this.Controls.Add(this.lblCanalizacion);
@@ -264,16 +274,17 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bttCerrar;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblLote;
-        private System.Windows.Forms.Label lblNumeroCanal;
         private System.Windows.Forms.Label lblCanalizacion;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtPeso;
         public System.Windows.Forms.Button bttSalir;
         public System.Windows.Forms.Button bttGuardar;
         public System.Windows.Forms.Label lblTitle;
+        public System.Windows.Forms.TextBox txtNumeroCanal;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblNumeroCanal;
+        public System.Windows.Forms.TextBox txtPeso;
     }
 }

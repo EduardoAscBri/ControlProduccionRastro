@@ -64,14 +64,6 @@
   <ItemGroup>
     <Compile Include="Classes\InnerDatabaseManager.cs" />
     <Compile Include="Classes\Usuario.cs" />
-    <Compile Include="DataSets\EtiquetaCanasta.cs">
-      <DependentUpon>EtiquetaCanasta.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSets\EtiquetaCanasta.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>EtiquetaCanasta.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSets\GENERAL.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,17 +201,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DataSets\EtiquetaCanasta.xsc">
-      <DependentUpon>EtiquetaCanasta.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\EtiquetaCanasta.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>EtiquetaCanasta.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\EtiquetaCanasta.xss">
-      <DependentUpon>EtiquetaCanasta.xsd</DependentUpon>
-    </None>
     <None Include="DataSets\GENERAL.xsc">
       <DependentUpon>GENERAL.xsd</DependentUpon>
     </None>

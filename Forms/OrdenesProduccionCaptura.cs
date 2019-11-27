@@ -224,7 +224,7 @@ namespace FYRASA.Forms
             {
                 int ultimoIdOrdenProduccion = 0;
                 int ultimoIdLote = 0;
-                string lote = this.txtSerieOrden.Text + this.txtFolioOrden.Text + this.dtpFecha.Value.Day + this.dtpFecha.Value.Month + this.dtpFecha.Value.Year;
+                string lote = this.txtSerieOrden.Text + ":::" + this.txtFolioOrden.Text + ":::" + this.dtpFecha.Value.Day + this.dtpFecha.Value.Month + this.dtpFecha.Value.Year;
 
                 this.command = new SqlCommand("SELECT ISNULL(MAX(idOrdenProduccion), 0) AS idOrdenProduccion FROM OrdenesProduccion", this.conexion);
                 ultimoIdOrdenProduccion = Convert.ToInt32(this.command.ExecuteScalar());

@@ -206,7 +206,7 @@ namespace FYRASA.Forms
                 this.txtPesoPromedio.Text + ", " +
                 "'" + this.cmbCanalizacion.Text + "'" +
                 ", '" + this.txtGranja.Text + "', " +
-                "0)";
+                "0, 1)";
 
             this.idBoleta = (ultimoid + 1);
 
